@@ -1,0 +1,33 @@
+package soal2;
+
+import java.io.IOException;
+import java.util.Scanner;
+
+public class PenyelesaianSoal2 {
+	
+	public static void main(String[] args) {
+		Scanner input = new Scanner(System.in);
+		System.out.println("Masukkan jumlah keluarga: ");
+		int n = input.nextInt();
+		double total = 0;
+		
+		System.out.println("Masukkan jumlah anggota keluarga masing-masing: ");
+		int[] nums = new int[n];
+		int i;
+		for (i = 0; i < n; i++) {
+			nums[i] = input.nextInt();
+		}
+
+		System.out.println("printing stored values");
+
+		for (i = 0; i < nums.length; i++) {
+			System.out.print(nums[i] + " ");
+			total = total + nums[i];
+		}
+		System.out.println();
+		total = total/4;
+		if(total > Math.floor(total))
+		System.out.println(Math.ceil(total));
+		input.close();
+	}
+}

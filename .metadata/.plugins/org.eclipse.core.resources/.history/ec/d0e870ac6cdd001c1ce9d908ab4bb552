@@ -1,0 +1,38 @@
+package soal1;
+
+import java.util.Scanner;
+
+public class PenyelesaianSoal1 {
+public static void main(String[] args) {
+	Scanner input = new Scanner(System.in);
+	System.out.println("Masukkan sampel kalimat: ");
+	String str = input.next();
+	String result = split(str);
+	System.out.println(result);
+}
+
+public static String split(String str) {
+	String vow="";
+	String rem="";
+	for(int i=0;i<str.length();i++){
+		boolean check=isVowel(str.charAt(i));
+		if(check){
+			vow=vow+str.charAt(i);
+		}
+		else{
+			rem=rem+str.charAt(i);
+		}
+	}
+	return vow+rem;
+}
+
+public static boolean isVowel(char ch){
+	String s="aeiouAEIOU";
+	for(int i=0;i<s.length();i++){
+		if(s.charAt(i)==ch){
+			return true;
+		}
+	}
+	return false;
+}
+}
